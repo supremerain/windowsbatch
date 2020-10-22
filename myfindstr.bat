@@ -1,4 +1,4 @@
-echo off
+@echo off
 REM myfindstr.bat
 SET workpath=d:\myworkpath
 SET inputpath=d:\inputpath
@@ -14,3 +14,4 @@ findstr /s %keyword3% %inputpath%\* > %workpath%\output3.txt
 findstr /s /r %keyword4% %inputpath%\* > %workpath%\output4.txt
 
 pause
+@echo on
