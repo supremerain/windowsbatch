@@ -2,9 +2,13 @@ echo off
 REM myfindstr.bat
 SET workpath=d:\myworkpath
 SET inputpath=d:\inputpath
-SET keyword=monday
+SET keyword1=mon
+SET keyword2=sun
 
 REM findstr
 REM findstr /s <strings> [<drive>:][<path>]<filename>[ ...]
-REM /s 現在のディレクトリとすべてのサブディレクトリを検索します。
-findstr /s %keyword% %inputpath% > %workpath%\output.txt
+
+findstr /s %keyword1% %inputpath%\* > %workpath%\output1.txt
+findstr /s /c:%keyword1% /c:%keyword2% %inputpath%\* > %workpath%\output1.txt
+
+pause
