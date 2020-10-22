@@ -4,5 +4,6 @@ dir /b/s d:\downloads > filelist.txt
 for /f %%a in (filelist.txt) do (
   echo OUTPUT=%%a
 )
+del filelist.txt
 pause
 @echo on
