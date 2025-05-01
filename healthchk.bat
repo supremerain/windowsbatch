@@ -10,8 +10,8 @@ if %debugmod% equ 0 echo pingtimes=[%pingtimes%]
 if %debugmod% equ 0 echo logfile=[%logfile%]
 for /f "delims= " %%i in (%list%) do (
   if %debugmod% equ 0 echo i=[%%i]
-  if %debugmod% equ 0 echo cmd=[ping -n %pingtimes% %%i > nul]
-  ping -n %pingtimes% %%i > nul
+  if %debugmod% equ 0 echo cmd=[ping -n %pingtimes% %%i -w 500 > nul]
+  ping -n %pingtimes% %%i -w 500 > nul
   if !errorlevel! neq 0 (
     if %debugmod% equ 0 echo %date% %time% ping NG [%%i]
     echo %date% %time% ping NG [%%i] >> %logfile%
